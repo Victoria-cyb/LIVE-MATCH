@@ -24,6 +24,8 @@ useServer({ schema }, wsServer);
 
 const server = new ApolloServer({
   schema,
+  introspection: true,
+  playground: true,
   plugins: [{
     async serverWillStart() {
       return {
@@ -42,6 +44,7 @@ async function startServer() {
   startScraper();
   httpServer.listen(4000, () => {
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
+    console.log(`🌐 GraphQL Playground available at http://localhost:4000${server.graphqlPath}`);
   });
 }
 

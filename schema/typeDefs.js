@@ -7,6 +7,7 @@ const typeDefs = gql`
     score: String
     odds: Odds
     time: String
+    sport: String
     updatedAt: String
   }
 
